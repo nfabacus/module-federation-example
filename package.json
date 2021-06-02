@@ -1,0 +1,11 @@
+{
+  "name": "module-federation-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nobuyuki Fujioka <n.fujioka@abacusmaths.info>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
