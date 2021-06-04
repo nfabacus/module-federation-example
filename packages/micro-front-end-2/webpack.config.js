@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 module.exports = {
   mode: 'development',
   devServer: {
-    port: 8080,
+    port: 8082,
   },
   module: {
     rules: [
@@ -30,9 +30,10 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'container',
-      remotes: {
-        microFrontEnd1: 'microFrontEnd1@http://localhost:8081/remoteEntry.js',
+      name: 'microFrontEnd2',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './Button': './src/Button'
       }
     }),
     new HtmlWebpackPlugin({
