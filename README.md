@@ -5,7 +5,9 @@ Example and POC of module federation with react
 I followed and modified the below tutorials and information.
 
 https://medium.com/nerd-for-tech/micro-front-ends-hands-on-project-63bd3327e162
+
 https://www.youtube.com/watch?v=D3XYAx30CNc
+
 https://github.com/jherr/wp5-intro-video-code
 
 I experimented to see if I can create a federation of cascading apps.
