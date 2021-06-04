@@ -28,11 +28,11 @@ localhost:8080 is the container/host app.
 ### Disadvantages
 - When child app components are updated, I suppose I have to refresh the page of host/parent app. But, this will be minimum if most development is done in child app.
 - If child apps go down, all the host apps will be down or affected too, thus kind of double edge sword.  But, I think the positive overweighs the negative.
+- Cannot take advantage of Create React App with pre-configration unless eject.
+  No point of using Create React App if I just follow the above tutorial/guide, as I have to create a new webpack anyway.
 
 ### Other Observations
 - bootstrap.js is required when importing external apps.
-- Cannot take advantage of Create React App with pre-configration unless eject.
-  No point of using Create React App if I just follow the below reference guide, as I have to create a new webpack anyway.
 
 ### Futher Investigations To Do
 - Investigate if there is any way to use module federation with Create React App without ejecting
