@@ -34,6 +34,7 @@ module.exports = {
       remotes: {
         microFrontEnd1: 'microFrontEnd1@http://localhost:8081/remoteEntry.js',
         microFrontEnd3: 'microFrontEnd3@http://localhost:8083/remoteEntry.js',
+        microFrontEnd4: 'microFrontEnd4@http://localhost:8084/remoteEntry.js',
       }
     }),
     new HtmlWebpackPlugin({

@@ -48,7 +48,13 @@ localhost:8080 is the container/host app.
   => After all, I have created a separate webpack.config.js in micro-front-end-3 folder. But, this means it still requires separate webpack configuration.
   
 - Try with Storybook
+  
+  => I have now created cra-with-story book folder.  It works with my own webpack.config.js.
+     
+     However, `storybook-webpack-federation-plugin` did not work for some reason, and also unfortunately `storybook with webpack5` (https://storybook.js.org/blog/storybook-for-webpack-5/) also did not work as of today 6 June, 2021.
+
 - Try with Next.js
+
 
 ### Another Tech Used
 yarn workspace - to keep all the apps in one mono repo:
