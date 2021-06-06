@@ -1,5 +1,9 @@
 # React Apps with Module Federation Example
+## Stitching different React Apps/Components from different servers together!
+
 Example and POC of module federation with react
+
+![module federation](./screenshot-module-federation.png)
 
 # Experiment and POC
 I followed and modified the below tutorials and information.
@@ -9,6 +13,8 @@ https://medium.com/nerd-for-tech/micro-front-ends-hands-on-project-63bd3327e162
 https://www.youtube.com/watch?v=D3XYAx30CNc
 
 https://github.com/jherr/wp5-intro-video-code
+
+https://www.youtube.com/watch?v=TOb1c39m64A for webpack 5 setup for further details.
 
 I experimented to see if I can create a federation of cascading apps.
 i.e. Container App contains child app which also cointains child components from another app (e.g. component library app)
@@ -38,6 +44,9 @@ localhost:8080 is the container/host app.
 ### Futher Investigations To Do
 - Investigate if there is any way to use module federation with Create React App without ejecting
   I may try this https://dev.to/kildareflare/how-to-modify-config-of-create-react-app-without-ejecting-5cbn
+  
+  => After all, I have created a separate webpack.config.js in micro-front-end-3 folder. But, this means it still requires separate webpack configuration.
+  
 - Try with Storybook
 - Try with Next.js
 
