@@ -12,7 +12,8 @@ https://github.com/jherr/wp5-intro-video-code
 
 I experimented to see if I can create a federation of cascading apps.
 i.e. Container App contains child app which also cointains child components from another app (e.g. component library app)
-Answer is YES.
+
+**Answer is YES. It worked.**
 
 To run the apps, in each folder in packages,
 1. `yarn install`

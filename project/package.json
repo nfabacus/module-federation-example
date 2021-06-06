@@ -5,7 +5,10 @@
   "author": "Nobuyuki Fujioka <n.fujioka@abacusmaths.info>",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": ["babel-loader"]
+  }
 }
