@@ -35,6 +35,9 @@ localhost:8080 is the container/host app.
 ### Disadvantages
 - When child app components are updated, I suppose I have to refresh the page of host/parent app. But, this will be minimum if most development is done in child app.
 - If child apps go down, all the host apps will be down or affected too, thus kind of double edge sword.  But, I think the positive overweighs the negative.
+  
+  => **Solution: Actually you can handle mfe import error with React.lazy loading, react.suspense and an ErrorBoundary component. See the example of MFEApp1 in the Host App.js (https://github.com/nfabacus/module-federation-example/blob/main/packages/container/src/App.js).**
+  
 - Cannot take advantage of Create React App with pre-configration unless eject.
   No point of using Create React App if I just follow the above tutorial/guide, as I have to create a new webpack anyway.
 
