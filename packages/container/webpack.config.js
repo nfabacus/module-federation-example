@@ -6,6 +6,13 @@ module.exports = {
   devServer: {
     port: 8080,
   },
+  entry: {
+    'app': "./src/index.js",
+    'service-worker': "./src/mocks/mockServiceWorker.js",
+  },
+  output: {
+    filename: "[name].js",
+  },
   module: {
     rules: [
       {
