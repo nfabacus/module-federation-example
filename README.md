@@ -43,7 +43,10 @@ localhost:8080 is the container/host app.
 
 ### Other Observations
 - bootstrap.js is required when importing external apps.
-- React and React dom must be set as singleton in webpack configs for the micro front end apps that are using react hooks (example apps here are `container` and `micro-front-end-1`).
+- React and React dom must be set as singleton in webpack configs for the micro front end apps that are using react hooks (example apps here are `container` and `micro-front-end-1`). Otherwise, it will throw an error about react hook.
+  
+  See: https://github.com/styled-components/styled-components/issues/3302
+
 ### Futher Investigations To Do
 - Investigate if there is any way to use module federation with Create React App without ejecting
   I may try this https://dev.to/kildareflare/how-to-modify-config-of-create-react-app-without-ejecting-5cbn
