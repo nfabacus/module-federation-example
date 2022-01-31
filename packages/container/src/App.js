@@ -18,7 +18,7 @@ function App() {
       .catch(err => {
         console.log(err)
       })
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    fetch('https://jsonplaceholder.typicode.com/users/1')
       .then(res => res.json())
       .then(user => {
         setUser(user);
@@ -26,19 +26,19 @@ function App() {
       .catch(err => {
         console.log(err)
       })
-  }, [])
+  }, []);
 
   return (
     <div className="App">
       <h1>Host Container App</h1>
       <div>
-        <h1>User And Posts: Mock Service Worker Test</h1>
+        <h2>User And Posts: Mock Service Worker Test</h2>
         <div>
           <h2>User</h2>
-          <p>{ user?.title }</p>
+          <p>{ user?.name }</p>
         </div>
         <div>
-          <h2>Posts</h2>
+          <h3>Posts</h3>
           {
             posts?.filter((post, i) => i < 5).map(({ id, title }) => (
               <li key={id} style={{ listStyle: 'none' }}>

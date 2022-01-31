@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
+const deps = require("./package.json").dependencies;
 module.exports = {
   mode: 'development',
   devServer: {
@@ -39,7 +40,22 @@ module.exports = {
       remotes: {
         microFrontEnd2: 'microFrontEnd2@http://localhost:8082/remoteEntry.js',
         microFrontEnd3: 'microFrontEnd3@http://localhost:8083/remoteEntry.js',
-      }
+      },
+      shared: [
+        {
+          ...deps,
+          react: {
+            eager: true,
+            singleton: true,
+            requiredVersion: deps.react,
+          },
+          "react-dom": {
+            eager: true,
+            singleton: true,
+            requiredVersion: deps["react-dom"],
+          },
+        }
+      ]
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html'

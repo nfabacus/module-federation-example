@@ -1,17 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-
+const deps = require("./package.json").dependencies;
 module.exports = {
   mode: 'development',
   devServer: {
     port: 8080,
-  },
-  entry: {
-    'app': "./src/index.js",
-    'service-worker': "./src/mocks/mockServiceWorker.js",
-  },
-  output: {
-    filename: "[name].js",
   },
   module: {
     rules: [
@@ -42,10 +35,25 @@ module.exports = {
         microFrontEnd1: 'microFrontEnd1@http://localhost:8081/remoteEntry.js',
         microFrontEnd3: 'microFrontEnd3@http://localhost:8083/remoteEntry.js',
         microFrontEnd4: 'microFrontEnd4@http://localhost:8084/remoteEntry.js',
-      }
+      },
+      shared: [
+        {
+          ...deps,
+          react: {
+            eager: true,
+            singleton: true,
+            requiredVersion: deps.react,
+          },
+          "react-dom": {
+            eager: true,
+            singleton: true,
+            requiredVersion: deps["react-dom"],
+          },
+        }
+      ]
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './index.html'
     })
   ]
 };

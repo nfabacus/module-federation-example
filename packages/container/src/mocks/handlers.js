@@ -1,14 +1,23 @@
 import { rest } from 'msw';
 
 export const handlers = [
-  rest.get('https://jsonplaceholder.typicode.com/todos/1', (req, res, ctx) => {
+  rest.get('https://jsonplaceholder.typicode.com/users/1', (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({
-        userId: 'user001',
         id: '001abc',
-        title: 'Mr. Tester',
-        completed: true
+        name: 'Mr Tester',
+        username: 'Testman'
+      })
+    );
+  }),
+  rest.get('https://jsonplaceholder.typicode.com/users/2', (req, res, ctx) => {
+    return res(
+      ctx.status(200),
+      ctx.json({
+        id: '001abc',
+        name: 'Mr Tester 2',
+        username: 'BobTheTester'
       })
     );
   }),

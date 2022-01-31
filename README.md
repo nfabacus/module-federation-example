@@ -43,7 +43,7 @@ localhost:8080 is the container/host app.
 
 ### Other Observations
 - bootstrap.js is required when importing external apps.
-
+- React and React dom must be set as singleton in webpack configs for the micro front end apps that are using react hooks (example apps here are `container` and `micro-front-end-1`).
 ### Futher Investigations To Do
 - Investigate if there is any way to use module federation with Create React App without ejecting
   I may try this https://dev.to/kildareflare/how-to-modify-config-of-create-react-app-without-ejecting-5cbn
@@ -64,3 +64,16 @@ yarn workspace - to keep all the apps in one mono repo:
 https://classic.yarnpkg.com/en/docs/workspaces/
 
 - Next, I will try Lerna.
+
+### Use of Mock Service Worker For Development (Browser)
+I managed to implement mock service worker.  This repo is an example.
+- Check container and micro-front-end-1 for examples.
+- Follow MSW (Mock Service Worker) Instruction: https://mswjs.io/docs/getting-started
+- Setup and initiate msw in the host app (container)
+- `worker.start()` is in `bootstrap.js` in the container app.
+- `mocks` folder is also in the container app.
+
+   Add endpoints that you want to intercept and mock in `handlers.js`.
+
+- Already done here, so no need to do it again, but for setting up from scratch, I ran `npx msw init ./ --save` in the root of the host app (container). Note that the directory of installation is root - mockServiceWorker.js should be in the same location as the index.html (its location is specified in webpack config).
+- For unit tests, I did not implement here, but msw should be installed in each app with `node` option.
